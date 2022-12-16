@@ -1,0 +1,100 @@
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dash-nav.css">
+</head>
+<% if (admin_prof) { %>
+
+    <div class="dash-nav">
+        <nav>
+            <ul>
+
+                <li>
+                    <form action="admin-profile" method="POST"><button <% if (nav_stat=="admin-prof" ) { %>
+                            id="active"
+                            <% } %>
+                                type="submit">Profile
+                        </button></form>
+                </li>
+
+                <li>
+                    <form action="rest-list" method="POST"><button <% if (nav_stat=="admin-rest" ) { %>
+                            id="active" <% } %> type="submit">Restaurant List</button></form>
+                </li>
+                <li>
+                    <form action="ngo-list" method="POST"><button <% if (nav_stat=="admin-ngo" ) { %>
+                            id="active"
+                            <% } %> type="submit">NGO List
+                        </button></form>
+                </li>
+                <li>
+                    <form action="orders" method="POST"><button <% if (nav_stat=="admin-order" ) { %>
+                            id="active"
+                            <% } %> type="submit">Orders
+                        </button></form>
+                </li>
+                <li>
+                    <form action="history" method="POST"><button <% if (nav_stat=="admin-log" ) { %>
+                            id="active"
+                            <% } %> type="submit">Logs
+                        </button></form>
+                </li>
+                <li>
+                    <form action="/adminlogOut" method="POST"><button type="submit">Logout
+                        </button></form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <% } %>
+        <% if (rest_prof) { %>
+
+            <div class="dash-nav">
+                <nav>
+                    <ul>
+                        <li>
+                            <form action="rest-profile" method="POST"><button <% if (nav_stat=="rest-prof" ) { %>
+                                    id="active"
+                                    <% } %> type="submit">Home
+                                </button></form>
+                        </li>
+                        <li>
+                            <form action="rest-log" method="POST"><button <% if (nav_stat=="rest-log" ) { %>
+                                    id="active"
+                                    <% } %> type="submit">Logs
+                                </button></form>
+                        </li>
+                        <li>
+                            <form action="/restlogOut" method="POST"><button type="submit">Logout
+                                </button></form>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <% } %>
+                <% if (ngo_prof) { %>
+
+                    <div class="dash-nav">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <form action="ngo-profile" method="POST"><button <% if (nav_stat=="ngo-prof" ) { %>
+                                            id="active"
+                                            <% } %> type="submit">Home
+                                        </button></form>
+                                </li>
+                                <li>
+                                    <form action="ngo-log" method="POST"><button <% if (nav_stat=="ngo-log" ) { %>
+                                            id="active"
+                                            <% } %> type="submit">Logs
+                                        </button></form>
+                                </li>
+                                <li>
+                                    <form action="/ngologOut" method="POST"><button type="submit">Logout</button></form>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <% } %>
+                        <h2 class="dash-nav-title">
+                            <%= nav_title %>
+                        </h2>
