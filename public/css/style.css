@@ -182,17 +182,42 @@ header {
 /* hero */
 /* main */
 main {
-  padding: 0 2.5rem;
-  height: 100vh;
+  margin-top: 1.3rem;
+  padding: 0 1rem;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
-  /* background-image: url("/svg.svg"); */
   background-repeat: no-repeat;
   background-position: -10rem 0px;
   background-size: cover;
 }
+
+main p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--sec-color3);
+  line-height: 2rem;
+}
+
+main > section {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+main > section > p {
+  width: 50%;
+}
+
+main > section > img {
+  width: 30%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
 .card-group .card {
   /* margin: 10px; */
   margin: 5px 15px;

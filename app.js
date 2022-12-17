@@ -13,12 +13,12 @@ require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 5000;
-const databaseSet = "uV5uGRvxn8";
+const databaseSet = "wfms";
 
 var db = mysql.createConnection({
-  host: "remotemysql.com",
-  user: "uV5uGRvxn8",
-  password: "K147S6gBUC",
+  host: "localhost",
+  user: "root",
+  password: "",
   database: databaseSet,
   timeout: 30000,
 });
@@ -33,6 +33,7 @@ app.use(
 app.use(fileUpload());
 app.use(cookieParser());
 //DB connection
+// setInterval(() => {
 db.connect((err) => {
   if (err) {
     console.log("Can't connect to DataBase");
@@ -41,6 +42,8 @@ db.connect((err) => {
     console.log(`Connected to *${databaseSet}* Database`);
   }
 });
+// }, 70000);
+
 global.db = db;
 //global.ses = session();
 
